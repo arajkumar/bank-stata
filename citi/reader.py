@@ -32,7 +32,7 @@ def parse_tabula_csv(reader):
         if row[0]:
             if complete_row[0]:
                 yield convert_to_num_columns(complete_row)
-            complete_row = row
+            complete_row = list(row)
         else:
             complete_row[1] += row[1]
             assert not (row[0] and row[2] and row[3] and row[4])
